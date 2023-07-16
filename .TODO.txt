@@ -1,0 +1,54 @@
+Berikut adalah alur umum dari sistem informasi peminjaman buku perpustakaan menggunakan Laravel 10 dengan menggunakan entitas yang telah dijabarkan sebelumnya:
+
+1. Pendaftaran Pengguna:
+   - Pengguna mengakses halaman pendaftaran.
+   - Pengguna mengisi formulir pendaftaran dengan informasi pribadi seperti nama, email, kata sandi, alamat, dan nomor telepon.
+   - Sistem memvalidasi data yang dimasukkan.
+   - Jika data valid, sistem menyimpan informasi pengguna dalam basis data dan mengizinkan pengguna untuk melakukan login.
+
+2. Otentikasi Pengguna:
+   - Pengguna mengakses halaman login.
+   - Pengguna memasukkan email dan kata sandi.
+   - Sistem memvalidasi informasi pengguna dengan data yang tersimpan dalam basis data.
+   - Jika informasi valid, pengguna diarahkan ke halaman utama.
+
+3. Penelusuran Buku:
+   - Pengguna mengakses halaman penelusuran buku.
+   - Pengguna memasukkan kriteria pencarian seperti judul, pengarang, atau kategori buku.
+   - Sistem melakukan pencarian berdasarkan kriteria yang diberikan.
+   - Sistem menampilkan daftar buku yang sesuai dengan kriteria pencarian.
+
+4. Peminjaman Buku:
+   - Pengguna memilih buku yang ingin dipinjam dari daftar buku yang tersedia.
+   - Sistem memverifikasi ketersediaan buku tersebut.
+   - Jika buku tersedia, pengguna memasukkan tanggal peminjaman dan tanggal pengembalian yang diinginkan.
+   - Sistem mencatat peminjaman dalam basis data dengan menciptakan entitas Peminjaman baru.
+   - Sistem mengurangi stok buku yang dipinjam.
+
+5. Pengembalian Buku:
+   - Pengguna mengakses halaman pengembalian buku.
+   - Pengguna memasukkan ID peminjaman atau memilih buku yang ingin dikembalikan.
+   - Sistem mencari entitas Peminjaman yang sesuai berdasarkan ID atau buku yang dipilih.
+   - Sistem mencatat pengembalian buku dalam basis data dengan mengubah status entitas Peminjaman menjadi "Dikembalikan".
+   - Sistem mengembalikan jumlah stok buku yang dipinjam.
+
+6. Riwayat Peminjaman:
+   - Pengguna mengakses halaman riwayat peminjaman.
+   - Sistem mencari entitas Riwayat Peminjaman yang terkait dengan pengguna yang sedang login.
+   - Sistem menampilkan daftar buku yang pernah dipinjam oleh pengguna beserta tanggal peminjaman dan tanggal pengembalian.
+
+7. Pengelolaan Buku (Admin/Petugas Perpustakaan):
+   - Admin atau petugas perpustakaan mengakses halaman pengelolaan buku.
+   - Sistem memvalidasi akses admin atau petugas perpustakaan sebelum mengizinkan aksi pengelolaan buku.
+   - Admin atau petugas perpustakaan dapat menambahkan buku baru, mengubah informasi buku, atau menghapus buku yang sudah tidak tersedia.
+   - Sistem memproses perubahan atau penghapusan buku dalam basis data.
+
+8. Notifikasi:
+   - Sistem memeriksa tanggal pengembalian buku yang sudah mendekati.
+   - Jika tanggal pengembalian mendekati, sistem mengirimkan notifikasi kepada pengguna untuk mengingatkan tentang pengembalian buku.
+   - Sistem juga dapat mengirimkan notifikasi kepada admin atau petugas perpustakaan tentang peminjaman atau pengembalian buku.
+
+Itulah alur umum dari sistem informasi peminjaman buku perpustakaan menggunakan Laravel 10, dengan melibatkan entitas-entitas yang telah dijabarkan sebelumnya. Harapannya, alur ini memberikan gambaran tentang bagaimana pengguna akan berinteraksi dengan sistem dalam proses pendaftaran, penelusuran buku, peminjaman, pengembalian, serta pengelolaan buku.
+
+
+LAST PROGRESS: All CRUD was done!
